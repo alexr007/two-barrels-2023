@@ -11,4 +11,3 @@ unsigned int sensor_out_high;
 // current valve status
 bool is_filling_in  = false;
 bool is_filling_out = false;
-bool is_motor_on    = false;
