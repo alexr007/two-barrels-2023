@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "constants.h"
+#include "liveness.h"
 
 // result is String with length of 4
 String intToReadable(unsigned int value) {
@@ -32,5 +33,5 @@ String getLineContent2(unsigned int lo, unsigned int hi, bool valve, bool motor)
     return "O L:" + sensor_to_char(lo) +
            " H:" + sensor_to_char(hi) +
            " V:" + valve_to_char(valve) +
-           "  "  + motor_to_char(motor);
+           "  "  + liveness_char();
 }
