@@ -41,11 +41,15 @@ void do_business() {
 }
 
 void setup() {
-  // sensors
+  // sensors, INPUT by default
   pinMode (SENSOR_IN_LOW, INPUT);
   pinMode (SENSOR_IN_HIGH, INPUT);
   pinMode (SENSOR_OUT_LOW, INPUT);
   pinMode (SENSOR_OUT_HIGH, INPUT);
+  // valves, setup initial values
+  digitalWrite(VALVE_IN,   OFF);
+  digitalWrite(VALVE_OUT,  OFF);
+  digitalWrite(PUMP_MOTOR, OFF);
   // valves
   pinMode (VALVE_IN, OUTPUT);
   pinMode (VALVE_OUT, OUTPUT);
