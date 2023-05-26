@@ -11,8 +11,8 @@ void read_sensors() {
   sensor_out_high = digitalRead(SENSOR_OUT_HIGH);
 }
 
-void pump_on()         { digitalWrite(PUMP_MOTOR, ON);  }
-void pump_off()        { digitalWrite(PUMP_MOTOR, OFF); }
+void pump_on()         { digitalWrite(PUMP_MOTOR, HIGH);} // SSR
+void pump_off()        { digitalWrite(PUMP_MOTOR, LOW); } // SSR
 void valve_in_open()   { digitalWrite(VALVE_IN,   ON);  }
 void valve_in_close()  { digitalWrite(VALVE_IN,   OFF); }
 void valve_out_open()  { digitalWrite(VALVE_OUT,  ON);  }
@@ -49,7 +49,7 @@ void setup() {
   // valves, setup initial values
   digitalWrite(VALVE_IN,   OFF);
   digitalWrite(VALVE_OUT,  OFF);
-  digitalWrite(PUMP_MOTOR, OFF);
+  pump_off();
   // valves
   pinMode (VALVE_IN, OUTPUT);
   pinMode (VALVE_OUT, OUTPUT);
